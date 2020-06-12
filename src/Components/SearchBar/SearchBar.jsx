@@ -18,6 +18,8 @@ class SearchBar extends Component {
   }
 
   render() {
+  
+
     return (
       <div className={styles.searchContainer}>
         <form onSubmit={this.onFormSubmit} className={styles.searchForm}>
