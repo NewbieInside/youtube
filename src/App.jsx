@@ -3,8 +3,10 @@ import React, { Component } from 'react';
 
 import SearchBar from './Components/SearchBar/SearchBar';
 import VideoList from './Components/VideoList/VideoList';
+import VideoDetail from './Components/VideoDetail/VideoDetail';
 
 import youtube from './apis/Youtube';
+
 
 import './App.css';
 
@@ -13,6 +15,10 @@ class App extends Component {
   state = {
     videos: [],
     selectedVideo: null,
+  }
+
+  componentDidMount() {
+    this.onTermSubmit(' buildings ');
   }
 
 
@@ -28,7 +34,10 @@ class App extends Component {
       },
     });
 
-    this.setState({ videos: response.data.items });
+    this.setState({ 
+      videos: response.data.items,
+      selectedVideo: response.data.items[0],
+    });
   };
 
   onVideoSelect = video => {
@@ -39,6 +48,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar onFormSubmit={this.onTermSubmit} />
+        <VideoDetail video={ this.state.selectedVideo } />
         <VideoList onVideoSelect={this.onVideoSelect} videos={this.state.videos}/>
       </div>
     );

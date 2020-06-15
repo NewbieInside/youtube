@@ -1,0 +1,16 @@
+.videoLoader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: auto;
+  border: 1px solid gray;
+}
+
+.videoDetail {
+  width: 40%;
+  height: 40%;
+  text-align: center;
+  /* border: 1px solid gray; */
+}
