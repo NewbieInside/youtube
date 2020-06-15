@@ -12,6 +12,7 @@ class App extends Component {
 
   state = {
     videos: [],
+    selectedVideo: null,
   }
 
 
@@ -30,11 +31,15 @@ class App extends Component {
     this.setState({ videos: response.data.items });
   };
 
+  onVideoSelect = video => {
+    this.setState({ selectedVideo: video })
+  }
+
   render() {
     return (
       <div>
         <SearchBar onFormSubmit={this.onTermSubmit} />
-        <VideoList videos={this.state.videos}/>
+        <VideoList onVideoSelect={this.onVideoSelect} videos={this.state.videos}/>
       </div>
     );
   }

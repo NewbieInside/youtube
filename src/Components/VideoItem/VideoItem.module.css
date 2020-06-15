@@ -1,0 +1,12 @@
+.itemCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  height: 30%;
+  margin-top: 20px;
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}

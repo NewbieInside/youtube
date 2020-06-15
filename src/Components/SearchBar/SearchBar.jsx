@@ -25,7 +25,7 @@ class SearchBar extends Component {
         <form onSubmit={this.onFormSubmit} className={styles.searchForm}>
           <div className={styles.searchBar}>
             <label htmlFor="videoSearch">
-              <h3>Video Search</h3>
+              <h3>Youtube Video Search</h3>
             </label>
             <input
               className={styles.searchInput}

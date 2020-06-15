@@ -2,14 +2,16 @@ import React from 'react';
 
 import VideoItem from '../VideoItem/VideoItem';
 
-const VideoList = ({ videos }) => {
+import styles from './VideoList.module.css';
+
+const VideoList = ({ videos, onVideoSelect }) => {
 
   const renderedList = videos.map((video, id) => {
-    return <VideoItem video={video} key={id}/>
+    return <VideoItem onVideoSelect={ onVideoSelect } video={video} key={id}/>
   });
 
   return (
-    <div>
+    <div className={styles.videoCont}>
       {renderedList}
     </div>
   )
